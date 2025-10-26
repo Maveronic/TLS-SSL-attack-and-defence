@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+  server:
+    build: ./server
+    container_name: tls_server
+    networks:
+      tlsnet:
+        ipv4_address: 10.10.0.10
+    ports:
+      - "8081:80"      # HTTP redirect exposed to host for convenience (host:8081 -> container:80)
+      - "8443:8443"    # vulnerable TLS
+      - "9443:9443"    # hardened TLS
+    restart: unless-stopped
+
+  victim:
+    build: ./victim
+    container_name: tls_victim
+    networks:
+      tlsnet:
+        ipv4_address: 10.10.0.20
+    depends_on:
+      - server
+    tty: true
+    stdin_open: true
+    restart: unless-stopped
+
+networks:
+  tlsnet:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.10.0.0/24
