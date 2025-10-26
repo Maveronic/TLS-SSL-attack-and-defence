@@ -11,7 +11,7 @@ HOST = 'tls-lab.local'            # used for SNI and logs
 HOST_IP = '10.10.0.10'            # actual IP to connect to (Docker server IP)
 PORT = 9443
 
-# <- PUT the expected SHA256 hex (pubkey) here (from openssl command above)
+# PUT the expected SHA256 hex (pubkey) here
 EXPECTED_HEX = '0426e2509f69f550d1640cc074ee1d3b71da0123e96e4568e3b56d6c42878608'
 
 
