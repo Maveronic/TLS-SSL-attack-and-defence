@@ -17,8 +17,8 @@ cd TLS-SSL-attack-and-defence
 
 ## 2. Build and start the Docker stack
 ```bash
-docker-compose build
-docker-compose up -d
+sudo docker-compose build
+sudo docker-compose up -d
 ```
 
 ---
@@ -34,19 +34,19 @@ docker-compose up -d
 ### testssl.sh
 ```bash
 # Vulnerable
-testssl localhost:8443
+sudo testssl localhost:8443
 
 # Hardened
-testssl localhost:9443
+sudo testssl localhost:9443
 ```
 
 ### sslyze
 ```bash
 # Vulnerable
-sslyze localhost:8443
+sudo sslyze localhost:8443
 
 # Hardened
-sslyze localhost:9443
+sudo sslyze localhost:9443
 ```
 
 ---
