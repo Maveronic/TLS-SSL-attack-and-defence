@@ -72,3 +72,14 @@ sudo sslyze localhost:9443
    - Go to `Privacy and Security`
    - On the section, go to `certificates` and select 'View certificates`
    - There, use the `Import` feature and add the download Burp CA
+
+---
+
+7. For the certificate pinnning demonstration, after starting the containerized application, run the command:
+   ```bash
+   docker exec -it tls_victim bash
+   ```
+   After that run the following:
+   ```bash
+   python3 pinned_client.py
+   ```
