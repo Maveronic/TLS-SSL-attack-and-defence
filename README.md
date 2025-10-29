@@ -67,7 +67,7 @@ sslyze localhost:9443
 
 3. Start Burp and ensure Proxy Listener is active on `127.0.0.1:8080`.  
 4. Browse to `https://localhost:8443` or `https://localhost:9443` — Burp should see the requests (you may need to import Burp’s CA into Firefox to avoid certificate warnings).
-5. Importing the certifciate can be done by visiting `http://burpsuite' and downloading the certificate (CA)
+5. Importing the certifciate can be done by visiting `http://burpsuite` and downloading the certificate (CA)
 6. Next, go to Firefox settings:
    - Go to `Privacy and Security`
    - On the section, go to `certificates` and select 'View certificates`
